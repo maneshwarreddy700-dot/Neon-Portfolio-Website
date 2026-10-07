@@ -1342,3 +1342,40 @@ section.visible {
     object-fit: cover !important;
     border-radius: 50% !important;
 }
+@media (max-width: 768px) {
+
+    .neon-circle {
+        width: 280px !important;
+        height: 280px !important;
+        min-width: 280px !important;
+        min-height: 280px !important;
+        flex: 0 0 280px !important;
+    }
+
+    .profile-photo {
+        width: 215px !important;
+        height: 215px !important;
+        min-width: 215px !important;
+        min-height: 215px !important;
+        flex: 0 0 215px !important;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .neon-circle {
+        width: 250px !important;
+        height: 250px !important;
+        min-width: 250px !important;
+        min-height: 250px !important;
+        flex: 0 0 250px !important;
+    }
+
+    .profile-photo {
+        width: 190px !important;
+        height: 190px !important;
+        min-width: 190px !important;
+        min-height: 190px !important;
+        flex: 0 0 190px !important;
+    }
+}
