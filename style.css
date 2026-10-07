@@ -536,93 +536,140 @@ body::after {
    CLEAN ROTATING OUTER ORBITS
 ================================= */
 
+/* =========================================
+   REAL ROTATING NEON PROFILE SYSTEM
+========================================= */
+
 .neon-circle {
+    width: 320px;
+    height: 320px;
+
     position: relative;
-    overflow: visible;
-    border: none;
-    box-shadow: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none !important;
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    animation: profileFloat 4s ease-in-out infinite;
 }
 
-/* Main rotating orbit */
-.neon-circle::before {
-    content: "";
+
+/* =========================================
+   PROFILE PHOTO
+========================================= */
+
+.profile-photo {
+    width: 270px;
+    height: 270px;
+
+    position: relative;
+    z-index: 5;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 3px solid rgba(0, 255, 255, 0.8);
+
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 35px rgba(0, 255, 255, 0.5);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================
+   COMMON ORBIT
+========================================= */
+
+.orbit {
     position: absolute;
-
-    width: calc(100% + 35px);
-    height: calc(100% + 35px);
-
-    top: -17.5px;
-    left: -17.5px;
 
     border-radius: 50%;
 
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 35deg,
-        #00ffff 55deg,
-        #00ffff 85deg,
-        transparent 105deg,
-        transparent 180deg,
-        #ff00ff 205deg,
-        #ff00ff 235deg,
-        transparent 255deg,
-        transparent 360deg
-    );
-
-    /* Cut out the center so it becomes a ring */
-    -webkit-mask: radial-gradient(
-        farthest-side,
-        transparent calc(100% - 4px),
-        #000 calc(100% - 3px)
-    );
-
-    mask: radial-gradient(
-        farthest-side,
-        transparent calc(100% - 4px),
-        #000 calc(100% - 3px)
-    );
-
-    filter:
-        drop-shadow(0 0 6px #00ffff)
-        drop-shadow(0 0 12px #ff00ff);
-
-    z-index: 20;
     pointer-events: none;
 
-    animation: orbitSpin 3s linear infinite;
+    z-index: 10;
 }
 
 
-/* Small orbit */
-.neon-circle::after {
-    content: "";
+/* =========================================
+   INNER ROTATING ORBIT
+========================================= */
 
-    position: absolute;
+.orbit-1 {
+    width: 295px;
+    height: 295px;
 
-    width: calc(100% + 55px);
-    height: calc(100% + 55px);
+    border: 3px solid transparent;
 
-    top: -27.5px;
-    left: -27.5px;
+    border-top-color: #00ffff;
+    border-right-color: #00ffff;
 
-    border-radius: 50%;
+    box-shadow:
+        0 0 8px #00ffff,
+        0 0 18px rgba(0, 255, 255, 0.7);
+
+    animation: rotateClockwise 3s linear infinite;
+}
+
+
+/* =========================================
+   MAGENTA ORBIT
+========================================= */
+
+.orbit-2 {
+    width: 325px;
+    height: 325px;
+
+    border: 3px solid transparent;
+
+    border-bottom-color: #ff00ff;
+    border-left-color: #ff00ff;
+
+    box-shadow:
+        0 0 8px #ff00ff,
+        0 0 20px rgba(255, 0, 255, 0.7);
+
+    animation: rotateCounter 5s linear infinite;
+}
+
+
+/* =========================================
+   OUTER DASHED ORBIT
+========================================= */
+
+.orbit-3 {
+    width: 355px;
+    height: 355px;
 
     border: 2px dashed rgba(0, 255, 255, 0.8);
 
     box-shadow:
-        0 0 8px #00ffff,
-        0 0 15px rgba(0, 255, 255, 0.5);
+        0 0 8px #00ffff;
 
-    z-index: 19;
-    pointer-events: none;
-
-    animation: orbitReverse 8s linear infinite;
+    animation: rotateClockwise 9s linear infinite;
 }
 
 
-/* Clockwise */
-@keyframes orbitSpin {
+/* =========================================
+   ROTATION
+========================================= */
+
+@keyframes rotateClockwise {
+
     from {
         transform: rotate(0deg);
     }
@@ -633,13 +680,63 @@ body::after {
 }
 
 
-/* Counter-clockwise */
-@keyframes orbitReverse {
+@keyframes rotateCounter {
+
     from {
         transform: rotate(360deg);
     }
 
     to {
         transform: rotate(0deg);
+    }
+}
+
+
+/* =========================================
+   PROFILE FLOATING
+========================================= */
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .neon-circle {
+        width: 270px;
+        height: 270px;
+    }
+
+    .profile-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .orbit-1 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-2 {
+        width: 265px;
+        height: 265px;
+    }
+
+    .orbit-3 {
+        width: 290px;
+        height: 290px;
     }
 }
