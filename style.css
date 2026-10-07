@@ -1314,3 +1314,31 @@ section.visible {
     z-index: 2 !important;
     background: rgba(10, 10, 25, 0.95) !important;
 }
+/* FINAL PROFILE CIRCLE FIX */
+
+.neon-circle {
+    width: 360px !important;
+    height: 360px !important;
+    min-width: 360px !important;
+    min-height: 360px !important;
+    aspect-ratio: 1 / 1 !important;
+    flex: 0 0 360px !important;
+}
+
+.profile-photo {
+    width: 275px !important;
+    height: 275px !important;
+    min-width: 275px !important;
+    min-height: 275px !important;
+    aspect-ratio: 1 / 1 !important;
+    flex: 0 0 275px !important;
+    border-radius: 50% !important;
+}
+
+.profile-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
