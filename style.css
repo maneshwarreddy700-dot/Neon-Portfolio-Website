@@ -437,3 +437,89 @@ body::after {
     border-radius: 50%;
     display: block;
 }
+/* ================================
+   FUTURISTIC HERO EFFECTS
+================================ */
+
+/* Rotating neon ring */
+
+.neon-circle {
+    animation: float 4s ease-in-out infinite,
+               neonRotate 12s linear infinite;
+}
+
+@keyframes neonRotate {
+    from {
+        box-shadow:
+            0 0 20px #00ffff,
+            inset 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 40px #ff00ff,
+            inset 0 0 40px rgba(255, 0, 255, 0.3);
+    }
+
+    to {
+        box-shadow:
+            0 0 20px #00ffff,
+            inset 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+}
+
+
+/* Floating neon particles */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        120px 80px 0 #ff00ff,
+        -180px 160px 0 #00ffff,
+        250px -100px 0 #ff00ff,
+        -300px -80px 0 #00ffff;
+    animation: particles 8s linear infinite;
+    pointer-events: none;
+}
+
+.hero::before {
+    top: 20%;
+    left: 10%;
+}
+
+.hero::after {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: -4s;
+}
+
+@keyframes particles {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-80px) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 0.3;
+    }
+}
