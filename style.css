@@ -523,3 +523,29 @@ body::after {
         opacity: 0.3;
     }
 }
+/* Rotating neon ring around profile */
+
+.neon-circle::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #00ffff;
+    border-right-color: #ff00ff;
+    border-bottom-color: #00ffff;
+    z-index: 2;
+    pointer-events: none;
+
+    animation: ringSpin 4s linear infinite;
+}
+
+@keyframes ringSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
