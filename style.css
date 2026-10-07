@@ -1282,3 +1282,35 @@ section.visible {
         width: 100%;
     }
 }
+/* FINAL PROJECT IMAGE FIX */
+
+.project-card {
+    overflow: hidden !important;
+}
+
+.project-image {
+    width: 100% !important;
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    overflow: hidden !important;
+    display: block !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+}
+
+.project-image img {
+    width: 100% !important;
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+.project-content {
+    position: relative !important;
+    z-index: 2 !important;
+    background: rgba(10, 10, 25, 0.95) !important;
+}
