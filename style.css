@@ -1379,3 +1379,58 @@ section.visible {
         flex: 0 0 190px !important;
     }
 }
+/* PROFILE PHOTO - FINAL MOBILE FIX */
+
+.profile-photo {
+    width: 215px !important;
+    height: 215px !important;
+    min-width: 215px !important;
+    max-width: 215px !important;
+    min-height: 215px !important;
+    max-height: 215px !important;
+
+    flex: none !important;
+    flex-shrink: 0 !important;
+
+    aspect-ratio: 1 / 1 !important;
+
+    border-radius: 50% !important;
+    overflow: hidden !important;
+
+    position: relative !important;
+}
+
+.profile-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border-radius: 50% !important;
+}
+
+
+@media (max-width: 420px) {
+
+    .profile-photo {
+        width: 190px !important;
+        height: 190px !important;
+        min-width: 190px !important;
+        max-width: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+
+        flex: none !important;
+        flex-shrink: 0 !important;
+
+        aspect-ratio: 1 / 1 !important;
+    }
+}
